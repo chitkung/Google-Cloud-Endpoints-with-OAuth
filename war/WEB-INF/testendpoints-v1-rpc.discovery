@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"zRMgE0l9nVDW4S28VYYcYQF9UW4/L3yvH1as_W3zVTn_jnU0MM71ess\"",
+ "etag": "\"zRMgE0l9nVDW4S28VYYcYQF9UW4/bo0NHGSI94IVLJN_--Y57I2cmKg\"",
  "discoveryVersion": "v1",
  "id": "testendpoints:v1",
  "name": "testendpoints",
@@ -11,8 +11,8 @@
   "x32": "http://www.google.com/images/icons/product/search-32.gif"
  },
  "protocol": "rpc",
- "rootUrl": "https://gopomelo-cloud.appspot.com/_ah/api/",
- "rpcUrl": "https://gopomelo-cloud.appspot.com/_ah/api/rpc",
+ "rootUrl": "https://APPLICATION_ID.appspot.com/_ah/api/",
+ "rpcUrl": "https://APPLICATION_ID.appspot.com/_ah/api/rpc",
  "rpcPath": "/_ah/api/rpc",
  "parameters": {
   "alt": {
@@ -69,8 +69,8 @@
   }
  },
  "schemas": {
-  "A": {
-   "id": "A",
+  "Data": {
+   "id": "Data",
    "type": "object",
    "properties": {
     "count": {
@@ -84,23 +84,29 @@
   "testendpoints.test": {
    "id": "testendpoints.test",
    "parameters": {
+    "id_token": {
+     "type": "string",
+     "required": true
+    },
     "number": {
      "type": "integer",
      "required": true,
      "format": "int32"
-    },
-    "token": {
-     "type": "string",
-     "required": true
     }
    },
    "parameterOrder": [
-    "number",
-    "token"
+    "id_token",
+    "number"
    ],
    "returns": {
-    "$ref": "A"
+    "$ref": "Data"
    },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "testendpoints.test2": {
+   "id": "testendpoints.test2",
    "scopes": [
     "https://www.googleapis.com/auth/userinfo.email"
    ]
